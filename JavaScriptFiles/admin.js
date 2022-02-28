@@ -1,7 +1,8 @@
 const addNewProductBtn = document.querySelector('.add-product');
 let containerOfProducts = document.querySelector('.admin-container');
-const productsURL = 'https://61e06d0b63f8fc0017618763.mockapi.io/dogs';
 const updateProductBtn = document.querySelector('.update-product');
+
+const productsURL = 'https://61e06d0b63f8fc0017618763.mockapi.io/dogs';
 
 window.addEventListener('load', getAllProducts);
 
@@ -12,15 +13,19 @@ async function getAllProducts() {
 	const tableRows = products
 		.map(
 			(product) =>
-				`<tr>
-               <th scope="row">${product.id}</th>
-               <td>${product.name}</td>
-               <td>${product.price}</td>
-               <td><button class="btn btn-danger delete" data-product-id=${product.id}>Delete
-               </button></td>
-               <td><button class="btn btn-primary edit" data-product-id=${product.id}>Edit
-               </button></td>
-            </tr>`
+				`
+					<tr class="table-rows">
+						<th scope="row" class="table-id">${product.id}</th>
+						<td class="table-row">${product.name}</td>
+						<td class="table-row">${product.price}</td>
+							<div class="admin-table-btns">
+									<td class="table-row"><button class="btn btn-danger delete" data-product-id=${product.id}>Delete
+									</button>
+									<button class="btn btn-primary edit" data-product-id=${product.id}>Edit
+									</button></td>
+							</div>
+					</tr>
+				`
 		)
 		.join('');
 
@@ -65,7 +70,7 @@ async function addNewProduct(event) {
 	let product = await response.json();
 	console.log('newProduct', product);
 
-	let newProductTableRow = `<tr>
+	let newProductTableRow = `<tr class="table-rows">
          <th scope="row">${product.id}</th>
          <td>${product.name}</td>
          <td>${product.price}</td>

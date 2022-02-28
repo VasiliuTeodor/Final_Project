@@ -18,15 +18,26 @@
             </ul>
         </div>
     </nav>
-    <form action="" class="input-container">
-        <input type="hidden" id="product-id">
-        <input type="text" class="input-product" id="name" placeholder="Name">
-        <textarea class="input-product" id="description" cols="30" rows="10" placeholder="Description"></textarea>
-        <input type="text" class="input-product" id="price" placeholder="Price">
-        <button class="add-product">Add new product</button>
-        <button class="update-product">Update product</button>
-    </form>
-    <div class="admin-container"></div>
+    <div class="container">
+        <form action="" class="input-container">
+            <input type="hidden" id="product-id">
+            <input type="text" class="input-product" id="name" placeholder="Name">
+            <input type="text" class="input-product" id="price" placeholder="Price">
+            <textarea class="input-product" id="description" cols="30" rows="10" placeholder="Description"></textarea>
+            <div class="admin-btns">
+                <button class="add-product">Add new product</button>
+                <button class="update-product">Update product</button>
+            </div>
+        </form>
+        <table class="admin-container">
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>PRICE</th>
+                <th>ACTIONS</th>
+            </tr>
+        </table>
+    </div>
     <script src="/JavaScriptFiles/admin.js"></script>
 </body>
 </html>

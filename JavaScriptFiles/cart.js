@@ -46,6 +46,7 @@ window.addEventListener('load', () => {
 
 function changeQuantityOfProduct (event) {
     const changeQuantityBtn = event.target;
+    const products = JSON.parse(localStorage.getItem('cart'));
     let cart = JSON.parse(localStorage.getItem('cart'));
     const productInCart = cart.find((productFromCart) => 
         productFromCart.id == changeQuantityBtn.getAttribute('data-id')
