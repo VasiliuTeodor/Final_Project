@@ -1,96 +1,97 @@
-@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Roboto+Slab:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comforter&family=Roboto+Slab:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar {
-    background-color: black;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: black;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-    margin-right: 80px;
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin-right: 80px;
 }
 li > a {
-    text-decoration: none;
-    color: white;
-    font-size: 25px;
-    font-family: 'Gentium Book Basic', cursive;
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  font-family: "Gentium Book Basic", cursive;
 }
 
 li > a:hover {
-    color: red;
+  color: red;
 }
 
 .logo-second-title {
-    color: white ;
-    font-size: 25px;
-    text-decoration: none;
-    margin-left: 80px;
-    font-family: 'Gentium Book Basic', cursive;
+  color: white;
+  font-size: 25px;
+  text-decoration: none;
+  margin-left: 80px;
+  font-family: "Gentium Book Basic", cursive;
 }
 
 .logo-second-title > span {
-    color: red;
+  color: red;
 }
 
 .product-carts {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  justify-content: center;
 }
 
 .product-cart-image {
-    width: 60px;
-    height: 60px;
-    padding-right: 30px;
+  width: 60px;
+  height: 60px;
+  padding-right: 30px;
 }
 
-.plus, .minus {
-    padding: 3px 9px;
-    border-radius: 50%;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
+.plus,
+.minus {
+  padding: 3px 9px;
+  border-radius: 50%;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
 }
 .product-quantity {
-    padding: 0px 10px;
-    font-size: 18px;
+  padding: 0px 10px;
+  font-size: 18px;
 }
 .product-price {
-    font-size: 20px;
-    text-align: right;
+  font-size: 20px;
+  text-align: right;
 }
 .remove-product-btn {
-    font-size: 12px;
-    border: none;
-    background-color: white;
-    cursor: pointer;
-    color: red;
-    text-decoration: underline;
+  font-size: 12px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  color: red;
+  text-decoration: underline;
 }
 .product-cart {
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    font-family: 'Poppins', sans-serif;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-family: "Poppins", sans-serif;
 }
 
 .product-name {
-    width: 30%;
+  width: 30%;
 }
 /* .total-price {
    width: 81%;
@@ -102,27 +103,27 @@ li > a:hover {
 } */
 
 .total-price-card {
-    display: flex;
-    width: 82%;
-    justify-content: flex-end;
-    margin-top: 20px;
-    padding-top: 5px;
-    font-size: 30px;
-    border-top: 1px solid gray; 
-    gap: 50px;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
+  display: flex;
+  width: 82%;
+  justify-content: flex-end;
+  margin-top: 20px;
+  padding-top: 5px;
+  font-size: 30px;
+  border-top: 1px solid gray;
+  gap: 50px;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
 }
 .total-price-text {
-    font-size: 20px;
+  font-size: 20px;
 }
 .products-number {
-    font-size: 12px;
-    padding-left: 2px;
-    color: rgb(75, 69, 69);
+  font-size: 12px;
+  padding-left: 2px;
+  color: rgb(75, 69, 69);
 }
 
 .empty {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }

@@ -1,147 +1,144 @@
-@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@400&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@400&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Gentium Book Basic', cursive;
+  margin: 0;
+  padding: 0;
+  font-family: "Gentium Book Basic", cursive;
 }
 
 .product-image {
-    width: 220px;
-    height: 220px;
-    position: absolute;
-    z-index: 10;
+  width: 220px;
+  height: 220px;
+  position: absolute;
+  z-index: 10;
 }
 
 .product {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: red;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
 }
 
 .product-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    background-color: white;
-    border-radius: 23px ;
-    padding: 50px 20px;
-    box-shadow: 0 0 8px 1px gray;
-    width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  background-color: white;
+  border-radius: 23px;
+  padding: 50px 20px;
+  box-shadow: 0 0 8px 1px gray;
+  width: 35%;
 }
 
 .price-and-btn {
-    display: flex;
-    gap: 80px;
-    align-items: center;
-    padding-top: 70px;
+  display: flex;
+  gap: 80px;
+  align-items: center;
+  padding-top: 70px;
 }
 
 .name-and-desc {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding-left: 20px;
-    padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 20px;
+  padding-bottom: 50px;
 }
 .product-description {
-    
-    color: rgb(109, 100, 100);
+  color: rgb(109, 100, 100);
 }
 
 .add-to-cart {
-    font-size: large;
-    padding: 8px 12px;
-    border-radius: 18px;
-    border: none;
-    background-color: red;
-    cursor: pointer;
-    color: white;
+  font-size: large;
+  padding: 8px 12px;
+  border-radius: 18px;
+  border: none;
+  background-color: red;
+  cursor: pointer;
+  color: white;
 }
 .add-to-cart:hover {
-    background-color: rgb(15, 15, 15);
+  background-color: rgb(15, 15, 15);
 }
 .add-to-cart:active {
-    background-color: red;
+  background-color: red;
 }
 .product-price {
-    font-size: x-large;
-    color: red;
+  font-size: x-large;
+  color: red;
 }
 
 .background-image {
-    background-color: rgb(243, 236, 236);
-    padding: 50px 185px 70px 185px;
-    position: relative;
-    border-radius: 5px;
+  background-color: rgb(243, 236, 236);
+  padding: 50px 185px 70px 185px;
+  position: relative;
+  border-radius: 5px;
 }
 .img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Roboto+Slab:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Comforter&family=Roboto+Slab:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar {
-    background-color: black;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: black;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-    margin-right: 80px;
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin-right: 80px;
 }
 li > a {
-    text-decoration: none;
-    color: white;
-    font-size: 25px;
-    font-family: 'Gentium Book Basic', cursive;
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  font-family: "Gentium Book Basic", cursive;
 }
 
 li > a:hover {
-    color: red;
+  color: red;
 }
 
 .logo-second-title {
-    color: white ;
-    font-size: 25px;
-    text-decoration: none;
-    margin-left: 80px;
-    font-family: 'Gentium Book Basic', cursive;
+  color: white;
+  font-size: 25px;
+  text-decoration: none;
+  margin-left: 80px;
+  font-family: "Gentium Book Basic", cursive;
 }
 
 .logo-second-title > span {
-    color: red;
+  color: red;
 }
 .succes-mesage {
-    color: red;
-    visibility: hidden;
+  color: red;
+  visibility: hidden;
 }
 
 .succes-mesage::after {
-    content: "\2713";
-    padding-left: 5px;
-    color: green;
-    font-size: 20px;
-    font-weight: 600;
+  content: "\2713";
+  padding-left: 5px;
+  color: green;
+  font-size: 20px;
+  font-weight: 600;
 }

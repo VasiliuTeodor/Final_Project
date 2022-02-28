@@ -1,12 +1,14 @@
 let searchParamString = window.location.search;
 const searchParam = new URLSearchParams(searchParamString);
-const productId = searchParam.get('id');
+const productId = searchParam.get("id");
 
-window.addEventListener('load', async function() {
-    const result = await fetch(`https://61e06d0b63f8fc0017618763.mockapi.io/dogs/${productId}`);
-    const product = await result.json();
+window.addEventListener("load", async function () {
+  const result = await fetch(
+    `https://61e06d0b63f8fc0017618763.mockapi.io/dogs/${productId}`
+  );
+  const product = await result.json();
 
-    const productCard = `
+  const productCard = `
         <div class="product-card">
             <div class="name-and-desc">
                 <h2 class="product-name">${product.name}</h2>
@@ -23,47 +25,50 @@ window.addEventListener('load', async function() {
             </div>
             <div class="succes-mesage">Product added to cart</div>
         </div>
-    `
-    document.querySelector('.product').innerHTML = productCard;
+    `;
+  document.querySelector(".product").innerHTML = productCard;
 });
 
-async function addToCart (event) {
-    const addToCartBtn = event.target;
-    const getProductId = addToCartBtn.getAttribute('data-id');
-    let succesMesage = document.querySelector('.succes-mesage');
-    
-    const result = await fetch(`https://61e06d0b63f8fc0017618763.mockapi.io/dogs/${getProductId}`);
-    const product = await result.json();
+async function addToCart(event) {
+  const addToCartBtn = event.target;
+  const getProductId = addToCartBtn.getAttribute("data-id");
+  let succesMesage = document.querySelector(".succes-mesage");
 
-    let cart = [];
+  const result = await fetch(
+    `https://61e06d0b63f8fc0017618763.mockapi.io/dogs/${getProductId}`
+  );
+  const product = await result.json();
 
-    if (addToCartBtn.classList.contains('add-to-cart')) {
-        if(localStorage.getItem('cart') == null) {
-            cart.push({...product, noOfProducts: 1})
-        } else {
-            cart = JSON.parse(localStorage.getItem('cart'));
-            const productInCart = cart.find((productFromCart) => productFromCart.id == product.id);
-            if (productInCart != undefined) {
-                productInCart.noOfProducts++;
-                console.log('Produsul exista in cos');
-            }
-            else {
-                const productToBeAddedInCart = {...product, noOfProducts: 1};
-                cart.push(productToBeAddedInCart);
-                console.log('Produsul tocmai a fost adaugat in cos');
-            }
-        }
-        succesMesage.style.visibility = 'visible';
-        setInterval(() => {
-            succesMesage.style.visibility = 'hidden';
-        }, 1500);
+  let cart = [];
+
+  if (addToCartBtn.classList.contains("add-to-cart")) {
+    if (localStorage.getItem("cart") == null) {
+      cart.push({ ...product, noOfProducts: 1 });
     } else {
-        console.log("Product failed to add");
+      cart = JSON.parse(localStorage.getItem("cart"));
+      const productInCart = cart.find(
+        (productFromCart) => productFromCart.id == product.id
+      );
+      if (productInCart != undefined) {
+        productInCart.noOfProducts++;
+        console.log("Produsul exista in cos");
+      } else {
+        const productToBeAddedInCart = { ...product, noOfProducts: 1 };
+        cart.push(productToBeAddedInCart);
+        console.log("Produsul tocmai a fost adaugat in cos");
+      }
     }
+    succesMesage.style.visibility = "visible";
+    setInterval(() => {
+      succesMesage.style.visibility = "hidden";
+    }, 1500);
+  } else {
+    console.log("Product failed to add");
+  }
 
-  if(cart.length > 0) {
-    localStorage.setItem('cart', JSON.stringify(cart));
-  } 
+  if (cart.length > 0) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
 }
 
-document.querySelector('.product').addEventListener('click', addToCart);
+document.querySelector(".product").addEventListener("click", addToCart);

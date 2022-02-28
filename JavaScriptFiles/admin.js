@@ -1,19 +1,19 @@
-const addNewProductBtn = document.querySelector('.add-product');
-let containerOfProducts = document.querySelector('.admin-container');
-const updateProductBtn = document.querySelector('.update-product');
+const addNewProductBtn = document.querySelector(".add-product");
+let containerOfProducts = document.querySelector(".admin-container");
+const updateProductBtn = document.querySelector(".update-product");
 
-const productsURL = 'https://61e06d0b63f8fc0017618763.mockapi.io/dogs';
+const productsURL = "https://61e06d0b63f8fc0017618763.mockapi.io/dogs";
 
-window.addEventListener('load', getAllProducts);
+window.addEventListener("load", getAllProducts);
 
 async function getAllProducts() {
-	const result = await fetch(productsURL);
-	const products = await result.json();
+  const result = await fetch(productsURL);
+  const products = await result.json();
 
-	const tableRows = products
-		.map(
-			(product) =>
-				`
+  const tableRows = products
+    .map(
+      (product) =>
+        `
 					<tr class="table-rows">
 						<th scope="row" class="table-id">${product.id}</th>
 						<td class="table-row">${product.name}</td>
@@ -26,51 +26,51 @@ async function getAllProducts() {
 							</div>
 					</tr>
 				`
-		)
-		.join('');
+    )
+    .join("");
 
-	containerOfProducts.innerHTML = tableRows;
+  containerOfProducts.innerHTML = tableRows;
 }
 
-containerOfProducts.addEventListener('click', handleProducts);
+containerOfProducts.addEventListener("click", handleProducts);
 
 async function handleProducts(event) {
-	const productId = event.target.getAttribute('data-product-id');
-	if (event.target.classList.contains('delete')) {
-		let response = await fetch(`${productsURL}/${productId}`, {
-			method: 'DELETE',
-		});
-		console.log(response);
-		getAllProducts();
-	} else if (event.target.classList.contains('edit')) {
-		console.log('edit', productId);
-		editProductById(productId);
-	}
+  const productId = event.target.getAttribute("data-product-id");
+  if (event.target.classList.contains("delete")) {
+    let response = await fetch(`${productsURL}/${productId}`, {
+      method: "DELETE",
+    });
+    console.log(response);
+    getAllProducts();
+  } else if (event.target.classList.contains("edit")) {
+    console.log("edit", productId);
+    editProductById(productId);
+  }
 }
 
-addNewProductBtn.addEventListener('click', addNewProduct);
+addNewProductBtn.addEventListener("click", addNewProduct);
 
 async function addNewProduct(event) {
-	event.preventDefault();
+  event.preventDefault();
 
-	const newProductName = document.getElementById('name').value;
-	const newProductPrice = document.getElementById('price').value;
-	const newProductDescription = document.getElementById('description').value;
+  const newProductName = document.getElementById("name").value;
+  const newProductPrice = document.getElementById("price").value;
+  const newProductDescription = document.getElementById("description").value;
 
-	let response = await fetch(productsURL, {
-		method: 'POST',
-		headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify({
-			name: newProductName,
-			price: newProductPrice,
-			description: newProductDescription,
-		}),
-	});
+  let response = await fetch(productsURL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: newProductName,
+      price: newProductPrice,
+      description: newProductDescription,
+    }),
+  });
 
-	let product = await response.json();
-	console.log('newProduct', product);
+  let product = await response.json();
+  console.log("newProduct", product);
 
-	let newProductTableRow = `<tr class="table-rows">
+  let newProductTableRow = `<tr class="table-rows">
          <th scope="row">${product.id}</th>
          <td>${product.name}</td>
          <td>${product.price}</td>
@@ -80,47 +80,47 @@ async function addNewProduct(event) {
          </button></td>
       </tr>`;
 
-	containerOfProducts.innerHTML += newProductTableRow;
+  containerOfProducts.innerHTML += newProductTableRow;
 }
 
-updateProductBtn.addEventListener('click', updateProduct);
+updateProductBtn.addEventListener("click", updateProduct);
 
 async function updateProduct(event) {
-	event.preventDefault();
+  event.preventDefault();
 
-	const productName = document.getElementById('name').value;
-	const productPrice = document.getElementById('price').value;
-	const productDescription = document.getElementById('description').value;
-	// value from hidden input
-	const productId = document.getElementById('product-id').value;
+  const productName = document.getElementById("name").value;
+  const productPrice = document.getElementById("price").value;
+  const productDescription = document.getElementById("description").value;
+  // value from hidden input
+  const productId = document.getElementById("product-id").value;
 
-	let response = await fetch(`${productsURL}/${productId}`, {
-		method: 'PUT',
-		headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify({
-			id: productId,
-			name: productName,
-			price: productPrice,
-			description: productDescription,
-		}),
-	});
+  let response = await fetch(`${productsURL}/${productId}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      id: productId,
+      name: productName,
+      price: productPrice,
+      description: productDescription,
+    }),
+  });
 
-	let data = await response.json();
-	console.log(data);
-	getAllProducts();
+  let data = await response.json();
+  console.log(data);
+  getAllProducts();
 }
 
 async function editProductById(productId) {
-	const productNameElement = document.getElementById('name');
-	const productPriceElement = document.getElementById('price');
-	const productDescriptionElement = document.getElementById('description');
-	const productIdHiddenElement = document.getElementById('product-id');
+  const productNameElement = document.getElementById("name");
+  const productPriceElement = document.getElementById("price");
+  const productDescriptionElement = document.getElementById("description");
+  const productIdHiddenElement = document.getElementById("product-id");
 
-	let response = await fetch(`${productsURL}/${productId}`);
-	let product = await response.json();
+  let response = await fetch(`${productsURL}/${productId}`);
+  let product = await response.json();
 
-	productNameElement.value = product.name;
-	productPriceElement.value = product.price;
-	productDescriptionElement.value = product.description;
-	productIdHiddenElement.value = product.id;
+  productNameElement.value = product.name;
+  productPriceElement.value = product.price;
+  productDescriptionElement.value = product.description;
+  productIdHiddenElement.value = product.id;
 }
