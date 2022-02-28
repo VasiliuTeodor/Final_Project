@@ -14,29 +14,29 @@ const searchBar = document.querySelector(".search-input");
 let cardsForPorducts = [];
 
 async function cards() {
-  try {
-    const cardsUrl = await fetch(
-      "https://61e06d0b63f8fc0017618763.mockapi.io/dogs"
-    );
-    cardsForPorducts = await cardsUrl.json();
+  const cardsUrl = await fetch(
+    "https://61e06d0b63f8fc0017618763.mockapi.io/dogs"
+  );
+  cardsForPorducts = await cardsUrl.json();
 
-    const productCards = cardsForPorducts
-      .map(
-        (product) =>
-          `<div class="products">
-                    <img src=${product.image} class="product-images" />
-                    <h2 class="product-names">${product.name}</h2>
-                    <a href="/final_project/details.html?id=${product.id}" class="details-btn">Details</a>
-                </div>`
-      )
-      .join("");
+  const productCards = cardsForPorducts
+    .map(
+      (product) =>
+        `<div class="products">
+            <img src=${product.image} class="product-images" />
+            <h2 class="product-names">${product.name}</h2>
+            <a href="/final_project/details.html?id=${product.id}" class="details-btn">Details</a>
+        </div>`
+    )
+    .join("");
 
-    document.querySelector("#products-container").innerHTML = productCards;
-  } catch (error) {
-    console.error(error);
-  }
+  document.querySelector("#products-container").innerHTML = productCards;
 }
-cards();
+try {
+  cards();
+} catch (error) {
+  console.error(error);
+}
 
 function searchProducts(event) {
   const search = event.target.value.toLowerCase();
