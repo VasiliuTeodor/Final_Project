@@ -2,7 +2,7 @@ const addNewProductBtn = document.querySelector(".add-product");
 let containerOfProducts = document.querySelector(".admin-container");
 const updateProductBtn = document.querySelector(".update-product");
 
-const productsURL = "https://61e06d0b63f8fc0017618763.mockapi.io/dogs";
+const productsURL = "https://61e06d0b63f8fc0017618763.mockapi.io/id/dogs";
 
 window.addEventListener("load", getAllProducts);
 
@@ -13,9 +13,7 @@ async function getAllProducts() {
   const tableRows = products
     .map(
       (product) =>
-        `
-					<tr class="table-rows">
-						<th scope="row" class="table-id">${product.id}</th>
+        `<tr class="table-rows">
 						<td class="table-row">${product.name}</td>
 						<td class="table-row">${product.price}</td>
 							<div class="admin-table-btns">
@@ -71,7 +69,6 @@ async function addNewProduct(event) {
   console.log("newProduct", product);
 
   let newProductTableRow = `<tr class="table-rows">
-         <th scope="row">${product.id}</th>
          <td>${product.name}</td>
          <td>${product.price}</td>
          <td><button class="btn btn-danger" data-product-id=${product.id}>Delete
@@ -98,7 +95,7 @@ async function updateProduct(event) {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      id: productId,
+      _id: productId,
       name: productName,
       price: productPrice,
       description: productDescription,

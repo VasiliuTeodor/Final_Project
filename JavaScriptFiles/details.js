@@ -4,7 +4,7 @@ const productId = searchParam.get("id");
 
 window.addEventListener("load", async function () {
   const result = await fetch(
-    `https://61e06d0b63f8fc0017618763.mockapi.io/dogs/${productId}`
+    `https://61e06d0b63f8fc0017618763.mockapi.io/id/dogs/${productId}`
   );
   const product = await result.json();
 
@@ -35,7 +35,7 @@ async function addToCart(event) {
   let succesMesage = document.querySelector(".succes-mesage");
 
   const result = await fetch(
-    `https://61e06d0b63f8fc0017618763.mockapi.io/dogs/${getProductId}`
+    `https://61e06d0b63f8fc0017618763.mockapi.io/id/dogs/${getProductId}`
   );
   const product = await result.json();
 
@@ -47,7 +47,7 @@ async function addToCart(event) {
     } else {
       cart = JSON.parse(localStorage.getItem("cart"));
       const productInCart = cart.find(
-        (productFromCart) => productFromCart.id == product.id
+        (productFromCart) => productFromCart._id == product.id
       );
       if (productInCart != undefined) {
         productInCart.noOfProducts++;
