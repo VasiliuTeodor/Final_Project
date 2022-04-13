@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
       (product) =>
         `<div class="product-carts">
             <div class="product-image">
-                <img src=${product.image} class="product-cart-image" />
+                <img src=${product.imageURL} class="product-cart-image" />
             </div>
             <div class="product-name">
                 <h1 class="product-card-name">${product.name}</h1>

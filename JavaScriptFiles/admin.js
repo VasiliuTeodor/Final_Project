@@ -2,7 +2,7 @@ const addNewProductBtn = document.querySelector(".add-product");
 let containerOfProducts = document.querySelector(".admin-container");
 const updateProductBtn = document.querySelector(".update-product");
 
-const productsURL = "https://61e06d0b63f8fc0017618763.mockapi.io/id/dogs";
+const productsURL = "https://61e06d0b63f8fc0017618763.mockapi.io/id/vehicles";
 
 window.addEventListener("load", getAllProducts);
 
@@ -95,7 +95,7 @@ async function updateProduct(event) {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      _id: productId,
+      id: productId,
       name: productName,
       price: productPrice,
       description: productDescription,

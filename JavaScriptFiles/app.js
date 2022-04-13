@@ -15,7 +15,7 @@ let cardsForPorducts = [];
 
 async function cards() {
   const cardsUrl = await fetch(
-    "https://61e06d0b63f8fc0017618763.mockapi.io/id/dogs"
+    "https://61e06d0b63f8fc0017618763.mockapi.io/id/vehicles"
   );
   cardsForPorducts = await cardsUrl.json();
 
@@ -23,7 +23,7 @@ async function cards() {
     .map(
       (product) =>
         `<div class="products">
-            <img src=${product.image} class="product-images" />
+            <img src=${product.imageURL} class="product-images" />
             <h2 class="product-names">${product.name}</h2>
             <a href="details.html?id=${product.id}" class="details-btn">Details</a>
         </div>`
